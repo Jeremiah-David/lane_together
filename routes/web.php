@@ -19,3 +19,10 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return response("Hello World");
 });
+
+
+// wildcard  curly braces varable
+Route::get("/posts/{id}", function ($id) { 
+ return response("Post " . $id)
+ ->header('Content-Type','text/plain');
+});
