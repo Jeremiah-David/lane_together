@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,13 @@ Route::get('/hello', function () {
 
 // wildcard  curly braces varable
 Route::get("/posts/{id}", function ($id) { 
+    // ddd($id);
  return response("Post " . $id)
  ->header('Content-Type','text/plain');
+})->where('id','[0-9]+');
+
+
+Route::get('/search', function (Request $request) {
+    dd($request->name . " " . $request->city);
+    // return response("Search");
 });
