@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Models\Listing;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +16,37 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'heading' => 'Latest Listings',
+        'listings' => App\Models\Listing::all()
+    ]);    
 });
-Route::get('/hello', function () {
-    return response("Hello World");
+
+Route::get('listings/{id}', function ($id) {
+    return view('listing', [
+    'listing' => Listing::find($id)
+    ]);
 });
 
+// for refernce
 
-// wildcard  curly braces varable
-Route::get("/posts/{id}", function ($id) { 
-    // ddd($id);
- return response("Post " . $id)
- ->header('Content-Type','text/plain');
-})->where('id','[0-9]+');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/hello', function () {
+//     return response("Hello World");
+// });
 
 
-Route::get('/search', function (Request $request) {
-    dd($request->name . " " . $request->city);
-    // return response("Search");
-});
+// // wildcard  curly braces varable
+// Route::get("/posts/{id}", function ($id) { 
+//     // ddd($id);
+//  return response("Post " . $id)
+//  ->header('Content-Type','text/plain');
+// })->where('id','[0-9]+');
+
+
+// Route::get('/search', function (Request $request) {
+//     dd($request->name . " " . $request->city);
+//     // return response("Search");
+// });
