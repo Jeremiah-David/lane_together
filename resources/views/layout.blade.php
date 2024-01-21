@@ -15,6 +15,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -23,10 +24,17 @@
                         colors: {
                             'eugene': "#0F2403",
                         },
+                        
                     },
                 },
             };
-        </script>
+            </script>
+            <link
+            rel="stylesheet"
+            href="../resouces/css/app.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <title>Lane Together</title>
     </head>
     <body class="mb-48">

@@ -7,7 +7,7 @@ class="relative h-72 bg-eugene flex flex-col justify-center align-center text-ce
 ></div>
 
 <div class="z-10">
-    <h1 class="text-6xl font-bold uppercase text-white">
+    <h1 class="text-6xl font-bold uppercase text-white" id="logo">
         Lane<span class="text-black">Together</span>
     </h1>
     <p class="text-2xl text-gray-200 font-bold my-4">
